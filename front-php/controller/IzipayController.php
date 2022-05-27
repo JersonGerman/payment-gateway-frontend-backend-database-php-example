@@ -50,6 +50,16 @@ class IzipayController extends Conexion
         $response = $execute->fetchAll(PDO::FETCH_ASSOC);;
         return $response;
     }
+
+
+    public function insertSuscription($idTransaction, $idSuscription){
+        $sql = "INSERT INTO tb_suscripciones(suscriptionId, idTransaccion, estado) VALUES (?,?,?)";
+        $insert = $this->conexion->prepare($sql);
+        $arrData = array($idSuscription, $idTransaction, "activo");
+        $rpta = $insert->execute($arrData);
+        return print_r($rpta);
+    }
+
 }
 
 // $objIziController = new IzipayController();
