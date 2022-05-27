@@ -34,60 +34,59 @@
     height: 32px;
   }
 }
+
 *{
   margin: 0;
   padding: 0;
 }
-header{
-  border-bottom: 1px solid #ccc;
-  padding: 1rem;
-}
-header ul{
-  display: flex;
-  list-style: none;
-}
-header ul li{
-  margin-left: 1rem;
+/* Home */
+.home{
+  height: 120vh;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  
 }
 hr{
   margin: auto;
 }
-/* Home */
-.home{
-  margin-top: 10px;
+
+
+
+/* Payment Form */
+.kr-embedded{
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }
-/* List Pay */
-.list-pay{
-  margin-top: 10px;
-}
-.list-pay h1{
-  margin-bottom:10px ;
-}
-.list-pay table{
-  border: 1px solid #ccc;
-  margin: auto;
-}
-.list-pay table thead tr th{
-  font-size: 14px;
-}
-.list-pay table thead tr th, tbody tr td{
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-.list-pay table tbody tr td, td button{
-  font-size: 12px;
+.kr-embedded span{
+  font-family: system-ui !important;
 }
 
-/* Create Suscription */
-.createSuscription h1{
-  margin: 10px auto;
+
+/* CustomButton */
+.contentButton{
+  display:none;
+  margin: 0 auto; 
   text-align: center;
+  width: 266px;
 }
-.formSuscription{
-  margin: 0 auto;
-  width: 25%;
-  
+.customButton{
+  background-color:rgb(41, 41, 204);
+  border-radius: 2px;
+  border-width: 0px;
+  color:#FFF;
+  height:40px;
+  width:100%
 }
+.customButton:hover{
+  background-color:rgb(33, 33, 233);
+}
+.spinner-border{
+  display: none;
+  margin: auto;
+}
+
 
 
 

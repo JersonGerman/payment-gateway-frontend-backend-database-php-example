@@ -22,21 +22,19 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $request = json_decode($postBody, true);
 
     $store = array(
-        "amount" => $request["amount"] * 100,
         "currency" => "PEN",
         "orderId" => uniqid("orderId"),
         "customer" => array(
             "email" => $request["email"],
         ),
-        "formAction" => isset($request["formAction"]) ? $request["formAction"] : "PAYMENT"
     );
 
-    $response = $client->post("V4/Charge/CreatePayment", $store);
-    $formToken = isset($response["answer"]["formToken"]) ? $response["answer"]["formToken"] : null;
+    $response = $client->post("V4/Charge/CreateToken", $store);
+    $formToken1 = isset($response["answer"]["formToken"]) ? $response["answer"]["formToken"] : null;
 
     $json = array(
         "status" => "success",
-        "formToken" => $formToken
+        "formToken" => $formToken1
     );
     // $json = $store;
     header("Content-Type: application/json");

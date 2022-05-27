@@ -1,0 +1,11 @@
+header{
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+  }
+  header ul{
+    display: flex;
+    list-style: none;
+  }
+  header ul li{
+    margin-left: 1rem;
+  }

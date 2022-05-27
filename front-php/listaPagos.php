@@ -4,9 +4,9 @@ require_once "controller/IzipayController.php";
 ?>
 
 
-<section class="list-pay">
-    <h1 style="text-align: center;">Pagos realizados</h1>
-    <table>
+<section class="container pt-4 list-pay">
+    <h2 class="mb-4 text-center">Pagos realizados</h2>
+    <table class="table table-hover table-sm">
         <thead>
             <tr>
                 <th>Suscrito</th>
@@ -29,7 +29,7 @@ require_once "controller/IzipayController.php";
             foreach ($lista as $key) {
                 // print_r($key);
                 echo "<tr>
-                    <td style='color:red;'>No</td>    
+                    <td style='color:red;text-align:center;'>No</td>    
                     <td>" . $key['id_transaction'] . "</td>    
                     <td>" . $key['order_Id'] . "</td>    
                     <td>" . $key['email'] . "</td>    
@@ -37,13 +37,20 @@ require_once "controller/IzipayController.php";
                     <td>" . $key['card'] . "</td>    
                     <td>" . $key['pan'] . "</td>    
                     <td>" . $key['fechaCreacion'] . "</td>    
-                    <td>" . $key['token'] . "</td>    
+                    <td style='text-align:center'>" . ($key['token']?"Si":"No") . "</td>    
                     <td>" . $key['uuid'] . "</td>    
                     <td>
-                        <a href='createSuscription'><button>Create Suscription</button></a>
-                        <a href='getSuscription'><button>Get Suscription</button></a>
-                        <a href='#'><button>Update Suscription</button></a>
-                        <a href='#'><button>Cancel Suscription</button></a>
+                        <li class='btn-group'>
+                            <a type='button' class='nav-link dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'>
+                                Action
+                            </a>
+                            <ul class='dropdown-menu'>
+                                <li><a class='dropdown-item' href='createSuscription.php?order=".$key['order_Id']."&&uuid=". $key['uuid']."'>Create Suscription</a></li>
+                                <li><a class='dropdown-item' href='#'>Get Suscription</a></li>
+                                <li><a class='dropdown-item' href='#'>Update Suscription</a></li>
+                                <li><a class='dropdown-item' href='#'>Cancel Suscription</a></li>
+                            </ul>
+                        </li>
                     </td>   
                 </tr>";
                 // print_r($value);
