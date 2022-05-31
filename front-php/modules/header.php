@@ -42,7 +42,12 @@
             <li class="nav-item">
                 <a href="suscriptions" class="nav-link">Suscripciones</a>
             </li>
+            <li>
+                <a href="../api/"  class="nav-link">APIs</a>
+            </li>
         </ul>
+ 
+
         <?php
         ?>
     </header>

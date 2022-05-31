@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $store = array(
         "amount" => $request["amount"] * 100,
-        "currency" => "PEN",
+        "currency" => $request["currency"],
         "orderId" => uniqid("orderId"),
         "customer" => array(
             "email" => $request["email"],
